@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Lexend+Deca&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    font-size: 15px;
+    --Bright-orange: hsl(31, 77%, 52%);
+    --Dark-cyan: hsl(184, 100%, 22%);
+    --Very-dark-cyan: hsl(179, 100%, 13%);
+
+    --paragraphs: hsla(0, 0%, 100%, 0.75);
+    --background-headings-buttons: hsl(0, 0%, 95%);
+}
+
+body, html {
+    
+    min-height: 100vh;
+    
+    background-color: var(--background-headings-buttons);
+    
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.main {
+    color: var(--paragraphs);
+    width: 900px;
+    height: 500px;
+    margin: 40px;
+    display: grid;
+    grid-column: 1fr 1fr 1fr;
+    grid-template-areas: 
+    "sedans suvs luxu"
+    "sedans suvs luxu"
+    "sedans suvs luxu";
+}
+.cars {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 45px;
+}
+
+.title {
+    color: var(--background-headings-buttons);
+    font-family: 'Big Shoulders Display', cursive;
+    font-weight: 700;
+    font-size: 2.7rem;
+    
+}
+.paragraph {
+    font-family: 'Lexend Deca', sans-serif;
+    font-weight: 400;
+    line-height: 1.8;
+    
+}
+.btn {
+    text-decoration: none;
+    background-color: var(--background-headings-buttons);
+    text-align: center;
+    font-family: 'Lexend Deca', sans-serif;
+    padding: 1rem;
+    border-radius: 1.3rem;
+    margin-right: 70px;
+    margin-top: 50px;
+    cursor: pointer;
+}
+
+.btn:hover{
+    outline: 2px solid white;
+    background-color: transparent;
+    color: var(--background-headings-buttons);
+}
+
+.Sedans__btn {
+    color: var(--Bright-orange);
+}
+.Suvs__btn {
+    color: var(--Dark-cyan);
+}
+.Luxury__btn {
+    color: var(--Very-dark-cyan);
+}
+
+
+.Sedans {
+    grid-area: sedans;
+    background-color: var(--Bright-orange);
+    border-radius: 0.5rem 0 0 0.5rem;
+}
+
+.Suvs {
+    grid-area: suvs;
+    background-color: var(--Dark-cyan);
+}
+
+.Luxury {
+    border-radius: 0 0.5rem 0.5rem 0;
+    grid-area: luxu;
+    background-color: var(--Very-dark-cyan);
+}
+
+@media (max-width: 820px) {
+    .main {
+        height: auto;
+        max-width: 375px;
+        min-width: 270px;
+        grid-template-areas: 
+        "sedans sedans sedans"
+        "suvs suvs suvs"
+        "luxu luxu luxu"
+        ;
+    }
+    .title {
+        padding: 1.5rem 0;
+    }
+    .Sedans {
+        border-radius: 0.5rem 0.5rem 0 0;
+    }
+    .Luxury {
+        border-radius: 0 0 0.5rem 0.5rem;
+    }
+
+}
