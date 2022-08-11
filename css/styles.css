@@ -32,10 +32,11 @@ body {
 }
 
 .main {
+    transition: .3s;
     color: var(--paragraphs);
-    width: 900px;
-    height: 500px;
-    margin: 40px;
+    max-width: 1000px;
+    margin: 2rem;
+    margin-bottom: 4rem;
     display: grid;
     grid-column: 1fr 1fr 1fr;
     grid-template-areas: 
@@ -47,8 +48,10 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    gap: 2rem;
     padding: 45px;
 }
+
 
 .title {
     color: var(--background-headings-buttons);
@@ -111,14 +114,16 @@ body {
 
 @media (max-width: 820px) {
     .main {
-        height: auto;
-        max-width: 375px;
-        min-width: 270px;
+        
+        
         grid-template-areas: 
         "sedans sedans sedans"
         "suvs suvs suvs"
         "luxu luxu luxu"
         ;
+    }
+    .cars {
+        gap: 1rem;
     }
     .title {
         padding: 1.5rem 0;
